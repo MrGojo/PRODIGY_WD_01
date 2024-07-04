@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff9c4;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffa726;
+            padding: 10px 0;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 10px 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: underline;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #home {
+            background-color: #fffde7; 
+        }
+        #about {
+            background-color: #fff9c4; 
+        }
+        #services {
+            background-color: #fff59d; 
+        }
+        #contact {
+            background-color: #fff176;
+        }
+
+        @media (max-width: 600px) {
+            nav ul li a {
+                font-size: 16px;
+            }
+            section {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home">
+        <h1>HOME</h1>
+    </section>
+    <section id="about">
+        <h1>ABOUT</h1>
+    </section>
+    <section id="services">
+        <h1>SERVICES</h1>
+    </section>
+    <section id="contact">
+        <h1>CONTACT</h1>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.getElementById("navbar");
+
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    navbar.style.backgroundColor = "#fb8c00"; 
+                } else {
+                    navbar.style.backgroundColor = "#ffa726";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
